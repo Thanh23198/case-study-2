@@ -11,13 +11,15 @@ protected $masinhvien;
 protected $name;
 protected $phone;
 protected $address;
+protected $class;
 
-public function __construct($masinhvien,$name,$phone,$address)
+public function __construct($masinhvien,$name,$phone,$address, $class)
 {
     $this->masinhvien=$masinhvien;
     $this->name=$name;
     $this->phone=$phone;
     $this->address=$address;
+    $this->class=$class;
 }
 
     /**
@@ -26,6 +28,22 @@ public function __construct($masinhvien,$name,$phone,$address)
     public function getSinhvienID()
     {
         return $this->sinhvienID;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClass()
+    {
+        return $this->class;
+    }
+
+    /**
+     * @param mixed $class
+     */
+    public function setClass($class): void
+    {
+        $this->class = $class;
     }
 
     /**
