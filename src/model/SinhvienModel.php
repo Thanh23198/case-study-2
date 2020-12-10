@@ -30,6 +30,12 @@ class SinhvienModel
         return $stmt->fetchAll();
 
     }
+    public function getListClass()
+    {
+        $sql = "SELECT * FROM lophoc";
+        $stmt = $this->database->query($sql);
+        return $stmt->fetchAll();
+    }
 
     public function addlophoc($lophoc)
     {
@@ -41,12 +47,12 @@ class SinhvienModel
         return $stmt->fetchAll();
     }
 
-    public function getListClass()
-    {
-        $sql = "SELECT * FROM lophoc";
-        $stmt = $this->database->query($sql);
-        return $stmt->fetchAll();
-    }
+//    public function getListClass()
+//    {
+//        $sql = "SELECT * FROM lophoc";
+//        $stmt = $this->database->query($sql);
+//        return $stmt->fetchAll();
+//    }
 
     public function addsinhvien($sinhvien)
     {
@@ -60,7 +66,7 @@ class SinhvienModel
         $stmt->bindParam(":lopID", $sinhvien->getClass());
         $stmt->execute();
 
-        $lastInsertid = $this->database->lastInsertId();
+        $lastInsertid = $this->database->lastInsertId(); //Trả về ID của giá trị hàng hoặc chuỗi được chèn cuối cùng
 
         $sqlAddScore = "INSERT INTO diemthi (sinhvienID, diemtoan, diemvan, diemanh) 
                                     VALUES (:sinhvienID, :diemtoan, :diemvan, :diemanh)";
@@ -85,5 +91,20 @@ class SinhvienModel
 
     }
 
+    public function delete($diemthiID, $sinhvienid)
+    {
+        $sql = 'DELETE FROM diemthi WHERE diemthiID=:diemthiID';
+        $stmt = $this->database->prepare($sql);
+        $stmt->bindParam(":diemthiID", $diemthiID);
+        $stmt->execute();
+
+
+        $sql2 = 'DELETE FROM sinhvien WHERE sinhvienID=:sinhvienID';
+        $stmt2 = $this->database->prepare($sql2);
+        $stmt2->bindParam(":sinhvienID", $sinhvienid);
+        $stmt2->execute();
+
+    }
 
 }
+

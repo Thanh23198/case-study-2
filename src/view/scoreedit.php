@@ -29,7 +29,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php?page=default">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php?page=scorelist">Bang Diem</a>
@@ -59,15 +59,6 @@
     <a href="index.php?page=addscore" class="btn btn-success">Add Score</a></div>
 
 <form method="post">
-<!--    <div class="form-group">-->
-<!--        <label for="exampleInputEmail1">Masinhvien</label>-->
-<!--        <input type="text" name="masinhvien" class="form-control" id="exampleInputEmail1"-->
-<!--               placeholder="Enter Masinhvien here">-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--        <label for="exampleInputEmail1">Name</label>-->
-<!--        <input type="text" name="name" class="form-control" id="exampleInputEmail1" placeholder="Enter name here">-->
-<!--    </div>-->
     <div class="form-group">
         <label for="exampleInputEmail1">Diem Toan</label>
         <input type="text" name="diemtoan" class="form-control" id="exampleInputEmail1" placeholder="Enter phome here">

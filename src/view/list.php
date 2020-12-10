@@ -12,8 +12,9 @@
     <title>Document</title>
 </head>
 <body>
+<div>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">StudentManager</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,11 +22,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="index.php">List Student <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="index.php?page=scorelist">Bang Diem</a>
-            </li>
+<!--            <li class="nav-item">-->
+<!--                <a class="nav-link" href="index.php?page=scorelist">Bang Diem</a>-->
+<!--            </li>-->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
@@ -48,7 +49,8 @@
     </div>
 </nav>
 <div class="col-4"><a href="index.php?page=add" class="btn btn-success">Add Student</a>
-<a href="index.php?page=addscore" class="btn btn-success">Add Score</a></div>
+    <a href="index.php?page=scorelist" class="btn btn-success">Add Score</a></div>
+<!--<a href="index.php?page=addscore" class="btn btn-success">Add Score</a></div>-->
 
 <table class="table table-dark">
     <thead>
@@ -58,9 +60,9 @@
         <th scope="col">Ten</th>
         <th scope="col">Dien thoai</th>
         <th scope="col">Dia chi</th>
-
-
-
+        <th scope="col">Diem Toan</th>
+        <th scope="col">Diem Van</th>
+        <th scope="col">Diem Anh</th>
     </tr>
     </thead>
     <tbody>
@@ -74,9 +76,134 @@
             <td><?php echo $sinhvien['diemtoan']?></td>
             <td><?php echo $sinhvien['diemvan']?></td>
             <td><?php echo $sinhvien['diemanh']?></td>
+            <td><a href="index.php?page=delete&diemthiid=<?php echo $sinhvien['diemthiID'] ?>&sinhvienid=<?php echo $sinhvien['sinhvienID'] ?>" onclick="return confirm('Are you sure')" class="btn btn-danger">Delete</a></td>
+
         </tr>
     <?php endforeach?>
     </tbody>
 </table>
+<footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+
+    <!-- Footer Elements -->
+    <div class="container">
+
+        <!--Grid row-->
+        <div class="row">
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-12 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(78).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(79).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-12 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(81).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(82).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4">
+
+                <!--Image-->
+                <div class="view overlay z-depth-1-half">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).jpg" class="img-fluid"
+                         alt="">
+                    <a href="">
+                        <div class="mask rgba-white-light"></div>
+                    </a>
+                </div>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+
+    <footer class="footer bg-dark text-white shape-parent overflow-hidden text-center pt-160 pb-60 ">
+        <div class="footer-copyright text-center py-3">
+            <div class="footer-copyright mb-5">© Student Manager 2020-2021</div>
+        </div>
+        <!--    <div class="footer-copyright text-center py-3" style="background-color: #343a40; color: white">© Student Manager 2020-2021</div>-->
+    </footer>
+    <!-- Footer Elements -->
+
+    <!-- Copyright -->
+
+    <!-- Copyright -->
+
+
+</footer>
+
 </body>
 </html>
+
+<!-- Footer -->
+
+<!-- Footer -->

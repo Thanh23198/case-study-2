@@ -13,6 +13,8 @@ switch ($page){
     case 'editscore':
         $DiemthiController->editScore();
         break;
+    case 'delete':
+        $Sinhviencontroller->delete();
     default:
         $Sinhviencontroller->show();
 }

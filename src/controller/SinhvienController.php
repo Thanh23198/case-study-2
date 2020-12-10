@@ -55,4 +55,12 @@ class SinhvienController
             header('location:index.php');
         }
     }
+
+    public function delete(){
+        $diemthiID = $_REQUEST['diemthiid'];
+        $sinhvienid = $_REQUEST['sinhvienid'];
+        $this->Sinhviencontroller->delete($diemthiID, $sinhvienid);
+        header('location:index.php');
+    }
+
 }
